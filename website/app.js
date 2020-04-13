@@ -19,7 +19,7 @@ function performAction(e) {
     getWeather(baseURL, zip, unit, countryCode, apiKey)
         .then(function (data) {
             console.log(data);
-            postData('/add', { date: newDate, temp: data.main.temp +'C&deg', content: content });
+            postData('/add', { date: newDate, temp: data.main.temp +'&degC', content: content });
         })
         .then(
             updateUI()

@@ -1,8 +1,8 @@
 # weather-app
 # Project 3
 
-# Landing Page
-This project is for Udacity's Front End Nanodegree program. Starter code provided by Udacity.
+# Weather Journal App
+This project is for Udacity's Front End Nanodegree program. Starter code provided by Udacity. Built with HTML, CSS, and Javascript.
 
 ## Table Of Contents
 1. Description
