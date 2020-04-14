@@ -1,6 +1,6 @@
 // Personal API Key for OpenWeatherMap API
 let baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
-let apiKey = '&appid=d3847693e36f8b671bc7bb8f7744c5e8';
+const apiKey = '&appid=d3847693e36f8b671bc7bb8f7744c5e8';
 let countryCode = 'us';
 let unit = '&units=metric';
 
@@ -15,11 +15,21 @@ function performAction(e) {
     e.preventDefault()
     const zip = document.getElementById('zip').value;
     const content = document.getElementById('feelings').value;
+    
+    // Form Validation
+    if (zip.length == 0) {
+        alert('Please enter zip code');
+        return
+    }
+    if (content.length == 0) {
+        alert('Please enter feelings');
+        return
+    }
 
     getWeather(baseURL, zip, unit, countryCode, apiKey)
         .then(function (data) {
             console.log(data);
-            postData('/add', { date: newDate, temp: data.main.temp +'&degC', content: content });
+            postData('/add', { date: newDate, temp: data.main.temp + '&degC', content: content });
         })
         .then(
             updateUI()
